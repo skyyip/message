@@ -19,7 +19,6 @@ window.onload = function() {
 
 	// A function to process messages received by the window.
 	function receiveMessage(e) {
-		messageEle.innerHTML = e.origin;
 		// Check to make sure that this message came from the correct domain.
 		if (e.origin !== "https://cdpn.io")
 			return;
