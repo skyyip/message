@@ -9,6 +9,11 @@
 	<p>
 		This document is on the domain: http://demos.matt-west.com
 	</p>
+	
+	<table id="table"><tbody>
+		<tr><td >a</td><td >a</td><td >a</td></tr>
+		<tr><td >b</td><td >b</td><td >b</td></tr></tbody></table>
+	
 	<div id="message"></div>
 
 	<script>
@@ -16,6 +21,7 @@ window.onload = function() {
 	// Get a reference to the <div> on the page that will display the
 	// message text.
 	var messageEle = document.getElementById('message');
+	var tableEle = document.getElementById('table');
 
 	// A function to process messages received by the window.
 	function receiveMessage(e) {
@@ -25,6 +31,7 @@ window.onload = function() {
 
 		// Update the div element to display the message.
 		messageEle.innerHTML = "Message Received: " + e.data;
+		document.head.insertAdjacentHTML("beforeend", `<style>#table {background:red}</style>`)
 	}
 
 	// Setup an event listener that calls receiveMessage() when the window
